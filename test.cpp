@@ -27,6 +27,21 @@ TEST(EchoTest, Numbers) {
 	EXPECT_EQ("0123456789", echo(2, test_val));
 } 
 
+TEST(CountTest, HelloWorld) {
+	std::string test_str = "hello world";
+	EXPECT_EQ(2, count(test_str));
+}
+
+TEST(CountTest, EmptyString) {
+	std::string test_str = "";
+	EXPECT_EQ(0, count(test_str));
+}
+
+TEST(CountTest, ManySpaces) {
+	std::string test_str = "   this   string has     weird   spacing";
+	EXPECT_EQ(5, count(test_str));
+}
+
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
